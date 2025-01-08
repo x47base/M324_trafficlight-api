@@ -7,6 +7,8 @@ pipeline {
     registry = "x47base/trafficlight"
     // this is the key in Jenkins
     registryCredential = 'dockerhub'
+
+    repository = 'https://github.com/x47base/M324_trafficlight-api.git'
   }
   agent any;
   stages {
@@ -16,7 +18,7 @@ pipeline {
           //your repo branch
           git branch: 'main'
           //your public repo
-          url: 'https://github.com/x47base/M324_trafficlight-api.git'
+          url: repository
         }
       }
     }

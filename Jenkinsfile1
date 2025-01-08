@@ -6,9 +6,9 @@ pipeline {
     // this entry has to be created on your dockerhub-account
     registry = "x47base/trafficlight"
     // this is the key in Jenkins
-    registryCredentials = 'dockerhub'
+    registryCredential = 'dockerhub'
   }
-  agent any
+  agent any;
   stages {
     stage('Cloning Repo') {
       steps {
@@ -16,7 +16,7 @@ pipeline {
           //your repo branch
           git branch: 'main'
           //your public repo
-          url: 'https://github.com/x47base/M324_trafficlight-api'
+          url: 'https://github.com/x47base/M324_trafficlight-api.git'
         }
       }
     }
